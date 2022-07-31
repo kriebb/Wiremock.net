@@ -1,0 +1,127 @@
+{
+  "Guid": "24f8f5ab-1ea6-4174-a8f0-bc3af1df627b",
+  "Title": "",
+  "Description": "",
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/v1/forecast",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "Params": [
+      {
+        "Name": "latitude",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "51.09"
+          }
+        ]
+      },
+      {
+        "Name": "longitude",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "4.06"
+          }
+        ]
+      },
+      {
+        "Name": "daily",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "temperature_2m_max"
+          },
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "temperature_2m_min"
+          }
+        ]
+      },
+      {
+        "Name": "current_weather",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "true"
+          }
+        ]
+      },
+      {
+        "Name": "timezone",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "Europe/Berlin"
+          }
+        ]
+      },
+      {
+        "Name": "start_date",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2022-07-31"
+          }
+        ]
+      },
+      {
+        "Name": "end_date",
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "2022-07-31"
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "latitude": 51.1,
+      "longitude": 4.06,
+      "generationtime_ms": 0.6139278411865234,
+      "utc_offset_seconds": 7200,
+      "elevation": 3.0,
+      "current_weather": {
+        "temperature": 22.3,
+        "windspeed": 23.8,
+        "winddirection": 252.0,
+        "weathercode": 3.0,
+        "time": "2022-07-31T18:00"
+      },
+      "daily_units": {
+        "time": "iso8601",
+        "temperature_2m_max": "°C",
+        "temperature_2m_min": "°C"
+      },
+      "daily": {
+        "time": [
+          "2022-07-31"
+        ],
+        "temperature_2m_max": [
+          23.6
+        ],
+        "temperature_2m_min": [
+          17.0
+        ]
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Sun, 31 Jul 2022 16:16:50 GMT",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive"
+    }
+  }
+}

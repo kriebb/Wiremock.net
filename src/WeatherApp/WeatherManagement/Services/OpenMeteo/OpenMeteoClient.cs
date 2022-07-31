@@ -11,16 +11,16 @@ internal class OpenMeteoClient : IOpenMeteoClient
         _httpClientFactory = httpClientFactory;
     }
 
-    public async Task<Forecast> GetForecastAsync(DateOnly date)
+    public async Task<Forecast?> GetForecastAsync(DateOnly date)
     {
-        using var httpClient = _httpClientFactory.CreateClient();
+        using var httpClient = _httpClientFactory.CreateClient("OpenMeteo");
         var forecast = await httpClient.GetFromJsonAsync<Forecast>(BuildForecastUri(date));
         return forecast;
     }
 
-    public string BuildForecastUri(DateOnly date)
+    private string BuildForecastUri(DateOnly date)
     {
-        return "https://api.open-meteo.com/v1/forecast?" +
+        return $"/v1/forecast?" +
                "latitude=51.09&" +
                "longitude=4.06&" +
                "daily=temperature_2m_max,temperature_2m_min&" +

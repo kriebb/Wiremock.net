@@ -4,5 +4,5 @@ namespace WeatherApp.WeatherManagement.Services.OpenMeteo;
 
 public interface IOpenMeteoClient
 {
-    Task<Forecast> GetForecastAsync(DateOnly date);
+    Task<Forecast?> GetForecastAsync(DateOnly date);
 }
