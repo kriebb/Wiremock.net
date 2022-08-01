@@ -8,7 +8,7 @@ namespace WireMockNetSampleTests
     {
 
         [Fact]
-        [Category("SystemTests")]
+        [Trait("Category","SystemTests")]
         public async Task WhenSendingAGetRequestTo_foo_ReceiveAResponse_bar()
         {
             //Arrange
