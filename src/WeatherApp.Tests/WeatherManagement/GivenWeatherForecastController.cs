@@ -23,7 +23,7 @@ namespace WeatherApp.Tests.WeatherManagement
 
 
             [Fact]
-            [Category("Integration")]
+            [Trait("Category","IntegrationTests")]
             public async Task WhenRequestingCurrentWeatherInformation_DateShouldBeUtcToday()
             {
                 //Arrange
@@ -50,7 +50,7 @@ namespace WeatherApp.Tests.WeatherManagement
         public class GivenWireMockSample
         {
             [Fact]
-            [Category("SystemTests")]
+            [Trait("Category","SystemTests")]
             public async Task WhenRequestingCurrentWeatherInformation_DateShouldBeUtcToday()
             {
                 //Arrange
@@ -99,7 +99,7 @@ namespace WeatherApp.Tests.WeatherManagement
         public class GivenWireMockRecordingSample
         {
             [Fact]
-            [Category("Integration")]
+            [Trait("Category","IntegrationTests")]
             public async Task WhenRequestingCurrentWeatherInformation_DateShouldBeUtcToday()
             {
                 //Arrange
@@ -159,7 +159,7 @@ namespace WeatherApp.Tests.WeatherManagement
         public class GivenWireMockPlaybackSample
         {
             [Fact]
-            [Category("SystemTests")]
+            [Trait("Category","SystemTests")]
             public async Task WhenRequestingCurrentWeatherInformation_DateShouldBeUtcToday()
             {
                 //Arrange
