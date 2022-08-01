@@ -22,4 +22,4 @@ jobs:
     - name: Build
       run: dotnet build ./src/WiremockSamples.sln --no-restore
     - name: Test
-      run: dotnet test ./src/WiremockSamples.sln --no-build --verbosity normal --filter "Category=!IntegrationTests" 
+      run: dotnet test ./src/WiremockSamples.sln --no-build --verbosity normal --filter "Category=SystemTests" 
