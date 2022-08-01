@@ -1,4 +1,4 @@
-![example workflow](https://github.com/kriebb/Wiremock.net/actions/workflows/main.yml/badge.svg)
+![Build Status](https://github.com/kriebb/Wiremock.net/actions/workflows/dotnet.yml/badge.svg)
 
 This repository contains sample code on
 
