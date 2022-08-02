@@ -31,6 +31,8 @@ public class WeatherForecastController : ControllerBase
     public async Task<WeatherForecast> GetAsync()
     {
         var currentForecast = await _meteoClient.GetForecastAsync(DateOnly.FromDateTime(_systemClock.UtcNow.Date));
+        if (currentForecast == null) return new WeatherForecast();
+
         var bucket = TempCBuckets.Single(tempCBucket =>
             currentForecast.CurrentWeather.Temperature >= tempCBucket.minMaxTempC.Min &&
             currentForecast.CurrentWeather.Temperature < tempCBucket.minMaxTempC.Max);
@@ -40,7 +42,6 @@ public class WeatherForecastController : ControllerBase
             Date = _systemClock.UtcNow.Date,
             Summary = bucket.Name,
             TemperatureC = currentForecast.CurrentWeather.Temperature
-
         };
     }
 }
