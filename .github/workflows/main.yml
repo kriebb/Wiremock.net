@@ -12,7 +12,7 @@ jobs:
       with:
         dotnet-version: 6.x
     - name: Install Dependencies
-      run: dotnet restore
+      run: dotnet restore ./src/WiremockSamples.sln
     - name: Build and Test
       run: |
         dotnet build
