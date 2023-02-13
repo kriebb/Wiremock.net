@@ -7,13 +7,12 @@ internal static class BuilderServicesExtensions
 {
     public static IServiceCollection AddConfiguredServices(this IServiceCollection services)
     {
-        // Add services to the container.
-
         services.AddControllers();
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
-        services.AddHttpClient("OpenMeteo",httpClient => {
+
+        services.AddHttpClient("OpenMeteo", httpClient =>
+        {
             httpClient.BaseAddress = new Uri("https://api.open-meteo.com");
         });
         services.AddSingleton<ISystemClock, SystemClock>();
